@@ -21,7 +21,7 @@ int main(int argc, char *argv[]){
     }
     std::string data_file = argv[1];
 
-    cout<<"Graph loading Started... ";    
+    cout<<"Graph loading Started... "<<endl;    
     Graph data_graph(data_file);
     cout<<"Done"<<endl;
     unsigned int t;

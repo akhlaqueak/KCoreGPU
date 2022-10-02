@@ -12,7 +12,7 @@
 #define THID threadIdx.x
 #define WARP_SIZE 32
 #define UINT unsigned int
-#define OUTPUT_LOC string("output/")
+#define OUTPUT_LOC string("./output/")
 #define REP 10
 
 #include <iostream>
