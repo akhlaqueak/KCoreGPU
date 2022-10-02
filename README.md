@@ -15,7 +15,7 @@ Input Format:
     # 20451
     
 Execution:
-
+    
     The program can be executed using the following command:
     $ ./kcore graph.txt
 

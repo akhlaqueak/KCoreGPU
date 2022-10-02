@@ -122,11 +122,11 @@ void Graph::writeKCoreToDisk(std::string file){
 }
 
 Graph::Graph(std::string input_file){
-    if(readSerialized(input_file)) return;
-    cout<<"Reading normal file... "<<endl;
+    // if(readSerialized(input_file)) return;
+    // cout<<"Reading normal file... "<<endl;
 
     readFile(input_file);
-    writeSerialized(input_file);
+    // writeSerialized(input_file);
 }
 
 Graph::~Graph(){
