@@ -1,7 +1,11 @@
 # KcoreGPU
-Accelerating k-Core Decomposition by a GPU
+The k-core of a graph is the largest induced
+subgraph with minimum degree k. The problem of k-core
+decomposition finds the k-cores of a graph for all valid values
+of k. In this work we developed a highly
+optimized peeling algorithm on a GPU for k-core decomposition. 
 
-Compiling the program:
+## Compiling the program:
     
     $ cd /KcoreGPU/
     $ make 
