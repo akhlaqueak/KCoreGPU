@@ -5,18 +5,14 @@ decomposition finds the k-cores of a graph for all valid values
 of k. In this work we developed a highly
 optimized peeling algorithm on a GPU for k-core decomposition. 
 
-## Compiling the program:
+## Compilation and Execution:
     
     $ cd /KcoreGPU/
     $ make 
+    $ ./kcore graph.txt
     By default, nvcc and g++ compiler is used.
     
     
-## Execution:
-    
-    The program can be executed using the following command:
-    $ ./kcore graph.txt
-
 ## Sample Datasets:
 
     Some datasets are provided in dataset folder, please use them to experiment the execution of our algorithm. e.g. 
