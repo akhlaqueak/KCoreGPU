@@ -8,16 +8,17 @@ Compiling the program:
     By default, nvcc and g++ compiler is used.
     
     
-Execution:
+## Execution:
     
     The program can be executed using the following command:
     $ ./kcore graph.txt
 
-Sample Datasets:
+## Sample Datasets:
+
     Some datasets are provided in dataset folder, please use them to experiment the execution of our algorithm. e.g. 
     $ ./kcore dataset/amazon0601.txt
     
-Citing KcoreGPU:
+## Citing KcoreGPU:
 
     If you use KcoreGPU, please cite our paper:
     TBD... 
