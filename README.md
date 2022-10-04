@@ -5,22 +5,19 @@ Compiling the program:
     
     $ cd /KcoreGPU/
     $ make 
-    By default, nvcc and g++ compiler is used. NVIDIA
+    By default, nvcc and g++ compiler is used.
     
-    
-Input Format:
-
-    The input to the program is a text file. The file should contain an undirected graph and vertex should start
-    from 0. The first line contains the number of vertices(N) in commented form e.g.
-    # 20451
     
 Execution:
     
     The program can be executed using the following command:
     $ ./kcore graph.txt
 
+Sample Datasets:
+    Some datasets are provided in dataset folder, please use them to experiment the execution of our algorithm. e.g. 
+    $ ./kcore dataset/amazon0601.txt
     
-Citing PKC:
+Citing KcoreGPU:
 
     If you use KcoreGPU, please cite our paper:
     TBD... 
