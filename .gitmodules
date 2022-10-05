@@ -1,3 +1,6 @@
 [submodule "gunrock"]
 	path = gunrock
 	url = https://github.com/gunrock/gunrock.git
+[submodule "GSWITCH"]
+	path = GSWITCH
+	url = https://github.com/PAA-NCIC/GSWITCH.git
