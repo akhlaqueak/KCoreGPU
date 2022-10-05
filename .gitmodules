@@ -4,3 +4,6 @@
 [submodule "GSWITCH"]
 	path = GSWITCH
 	url = https://github.com/PAA-NCIC/GSWITCH.git
+[submodule "Medusa"]
+	path = Medusa
+	url = https://github.com/Xtra-Computing/Medusa.git
