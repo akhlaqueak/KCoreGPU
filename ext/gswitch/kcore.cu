@@ -140,9 +140,8 @@ double run_core(G g, F f){
   //   g.update_level();
   // }
 
-  for(int level=0; level < 500; level++)
+  for(int level=0; level < 500; level++) // 500 is manually set. 
   {
-    g.update_level();
     while(true) // current level is done
     {
         inspector.inspect(as, g, f, stats, fets, conf);
@@ -152,6 +151,7 @@ double run_core(G g, F f){
         executor.expand(as, g, f, stats, fets, conf);
         if(as.finish(g,f,conf)) break;
     }
+    g.update_level();
   }
 
   double e = mwtime();
@@ -184,7 +184,7 @@ int main(int argc, char* argv[]){
   init_conf(stats, fets, conf, g, f);
 
   // step 3 : execute Algorithm
-  LOG(" -- Launching PageRank\n");
+  LOG(" -- Launching Kcore\n");
   double time = run_core(g.dg, f);
     
   // step 4 : validation
@@ -193,7 +193,7 @@ int main(int argc, char* argv[]){
 //   if(cmd_opt.validation){
 //     validation(g.hg, f.data.h_ra);
 //   }
-  LOG("GPU PageRank time: %.3f ms\n", time);
+  LOG("GPU Kcore time: %.3f ms\n", time);
   std::cout << time << std::endl;
   //std::cout << fets.nvertexs << " " 
             //<< fets.nedges << " "
