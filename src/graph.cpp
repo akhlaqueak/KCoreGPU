@@ -94,10 +94,10 @@ void Graph::readFile(string input_file){
     infile.close();
 
     cout<<"file read... "<<endl;
+    cout<<lines.size()<<endl;
 
     V++; // vertices index starts from 0, so add 1 to number of vertices.
     vector<set<unsigned int>> ns(V);
-    cout<<lines.size()<<endl;
     for(auto &p : lines){
         ns[p.first].insert(p.second);
         ns[p.second].insert(p.first);
