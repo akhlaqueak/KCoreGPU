@@ -14,7 +14,7 @@
 #define WARP_SIZE 32
 #define UINT unsigned int
 #define DS_LOC string("")
-#define OUTPUT_LOC string("../output/")
+#define OUTPUT_LOC string("./output/")
 #define REP 10
 #define LANEID (THID&31)
 #define WARPID (THID>>5)
