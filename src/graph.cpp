@@ -93,6 +93,8 @@ void Graph::readFile(string input_file){
     }
     infile.close();
 
+    cout<<"file read... "<<endl;
+
     V++; // vertices index starts from 0, so add 1 to number of vertices.
     vector<set<unsigned int>> ns(V);
     
