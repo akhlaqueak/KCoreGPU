@@ -1,19 +1,25 @@
 
 #ifndef CUTS_COMMON_H
 #define CUTS_COMMON_H
-#define BLK_NUMS 108
+#define BLK_NUMS 56
 #define BLK_DIM 1024
 #define WARPS_EACH_BLK (BLK_DIM/32)
 #define WORK_UNITS (BLK_NUMS*WARPS_EACH_BLK)
 #define MAX_NV 10000
+
 #define BUFF_SIZE 20000
 #define N_THREADS (BLK_DIM*BLK_NUMS)
 #define GLBUFFER_SIZE 1000000
 #define THID threadIdx.x
 #define WARP_SIZE 32
 #define UINT unsigned int
-#define OUTPUT_LOC string("./output/")
+#define DS_LOC string("../data_set/data/")
+#define OUTPUT_LOC string("../output/")
 #define REP 10
+#define LANEID (THID&31)
+#define WARPID (THID>>5)
+#define FULL 0xFFFFFFFF
+#define MAX_PREF 180
 
 #include <iostream>
 #include <vector>

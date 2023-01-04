@@ -14,6 +14,7 @@ public:
     unsigned int * degrees;
     unsigned int kmax, dmax;
     Graph(std::string input_file);
+    Graph();
     bool readSerialized(string input_file);
     void writeSerialized(string input_file);
     void readFile(string input_file);
