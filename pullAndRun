@@ -1,4 +1,0 @@
-#!/bin/bash
-git pull
-make
-./kcore ../data_set/data/amazon0601.txt
