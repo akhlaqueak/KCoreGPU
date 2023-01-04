@@ -102,12 +102,14 @@ void Graph::readFile(string input_file){
         ns[p.first].insert(p.second);
         ns[p.second].insert(p.first);
     }
+    cout<<"file read...1 "<<endl;
 
     lines.clear();
     degrees = new unsigned int[V];
     for(int i=0;i<V;i++){
         degrees[i] = ns[i].size();
     }
+    cout<<"file read... 2"<<endl;
 
     neighbors_offset = new unsigned int[V+1];
     neighbors_offset[0] = 0;
@@ -115,6 +117,7 @@ void Graph::readFile(string input_file){
 
     E = neighbors_offset[V];
     neighbors = new unsigned int[E];
+    cout<<"file read... 3"<<endl;
 
     #pragma omp parallel for
     for(int i=0;i<V;i++){
@@ -122,6 +125,7 @@ void Graph::readFile(string input_file){
         for(int j=neighbors_offset[i]; j < neighbors_offset[i+1]; j++, it++)
             neighbors[j] = *it;
     }
+    cout<<"file read... 4"<<endl;
     writeSerialized(input_file);
 }
 
