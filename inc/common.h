@@ -13,7 +13,7 @@
 #define THID threadIdx.x
 #define WARP_SIZE 32
 #define UINT unsigned int
-#define DS_LOC string("../data_set/data/")
+#define DS_LOC string("./dataset/")
 #define OUTPUT_LOC string("../output/")
 #define REP 10
 #define LANEID (THID&31)

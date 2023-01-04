@@ -9,7 +9,7 @@ bool degComp(const pair<unsigned int, unsigned int> & lhs, const pair<unsigned i
 bool Graph::readSerialized(string input_file){
     input_file = input_file.substr(input_file.find_last_of("/")+1);
     ifstream file;
-    file.open(string("serialized-") + input_file);
+    file.open(string(OUTPUT_LOC) +  string("serialized-") + input_file);
     if(file){
         cout<<"Reading serialized file... "<<endl;
         file>>V;
@@ -36,7 +36,7 @@ void Graph::writeSerialized(string input_file){
     input_file = input_file.substr(input_file.find_last_of("/")+1);
 
     ofstream file;
-    file.open( string("serialized-") + input_file);
+    file.open(string(OUTPUT_LOC) + string("serialized-") + input_file);
     if(file){
         file<<V<<endl;
         file<<E<<endl;
@@ -59,7 +59,7 @@ void Graph::readFile(string input_file){
 
     double load_start = omp_get_wtime();
     ifstream infile;
-    infile.open(input_file);
+    infile.open(DS_LOC + input_file);
     if(!infile){
         cout<<"load graph file failed "<<endl;
         exit(-1);
@@ -93,24 +93,19 @@ void Graph::readFile(string input_file){
     }
     infile.close();
 
-    cout<<"file read... "<<endl;
-    cout<<lines.size()<<endl;
-
     V++; // vertices index starts from 0, so add 1 to number of vertices.
     vector<set<unsigned int>> ns(V);
-    cout<<lines.size()<<endl;
+    
     for(auto &p : lines){
         ns[p.first].insert(p.second);
         ns[p.second].insert(p.first);
     }
-    cout<<"file read...1 "<<endl;
 
     lines.clear();
     degrees = new unsigned int[V];
     for(int i=0;i<V;i++){
         degrees[i] = ns[i].size();
     }
-    cout<<"file read... 2"<<endl;
 
     neighbors_offset = new unsigned int[V+1];
     neighbors_offset[0] = 0;
@@ -118,7 +113,6 @@ void Graph::readFile(string input_file){
 
     E = neighbors_offset[V];
     neighbors = new unsigned int[E];
-    cout<<"file read... 3"<<endl;
 
     #pragma omp parallel for
     for(int i=0;i<V;i++){
@@ -126,13 +120,12 @@ void Graph::readFile(string input_file){
         for(int j=neighbors_offset[i]; j < neighbors_offset[i+1]; j++, it++)
             neighbors[j] = *it;
     }
-    cout<<"file read... 4"<<endl;
     writeSerialized(input_file);
 }
 
 void Graph::writeKCoreToDisk(std::string file){
     // writing kcore in json dictionary format
-    std::ofstream out(string("pkc-kcore-") + file);
+    std::ofstream out(OUTPUT_LOC + string("pkc-kcore-") + file);
 
     out<<"{ ";
    
