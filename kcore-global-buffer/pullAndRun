@@ -1,0 +1,3 @@
+git pull
+nvcc KCore.cu -o kcore
+./kcore ../data_set/33.g
